@@ -28,22 +28,3 @@ print("\n=== VALORES ÚNICOS DE GÉNERO ===")
 print(df["genero"].value_counts(dropna=False))
 print("\n=== VALORES ÚNICOS DE PAÍS ===")
 print(df["pais"].value_counts(dropna=False))
-
-print("\n=== VALORES NULOS INICIALES ===")
-    nulos_iniciales = df.isnull().sum()
-    print(nulos_iniciales.to_string())
-    print(f"Total de valores nulos: {int(nulos_iniciales.sum())}")
-
-    duplicados_iniciales = int(df.duplicated().sum())
-    print("\n=== FILAS DUPLICADAS ===")
-    print(f"Cantidad: {duplicados_iniciales}")
-
-    edades_invalidas_iniciales = int(((df["edad"] < 18) | (df["edad"] > 100)).sum())
-    print("\n=== EDADES FUERA DEL RANGO 18 A 100 ===")
-    print(f"Cantidad: {edades_invalidas_iniciales}")
-
-    print("\n=== VALORES ÚNICOS DE GÉNERO ===")
-    print(df["genero"].value_counts(dropna=False).to_string())
-
-    print("\n=== VALORES ÚNICOS DE PAÍS ===")
-    print(df["pais"].value_counts(dropna=False).to_string())
